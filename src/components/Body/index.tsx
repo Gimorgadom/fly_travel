@@ -16,7 +16,7 @@ export default class Body extends PureComponent<any, IState>{
     }
 
     listFlights= (response: any) =>{
-        console.log(response);
+        
         this.setState({flights: response.flights})
     }
 

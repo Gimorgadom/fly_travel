@@ -37,7 +37,6 @@ export default  class SelectFlight extends PureComponent<IProps, IState>{
         const dif_minutes = Math.abs(date_arrive.getMinutes() - date_start.getMinutes());
 
         const final_value = (dif_days * 24 + dif_hours) + (dif_minutes/60);
-        console.log(final_value);
         return final_value;
 
     }
@@ -52,12 +51,12 @@ export default  class SelectFlight extends PureComponent<IProps, IState>{
     orderFlights = (a:IFlights, b:IFlights) => {
         const {filter} = this.state;
         if(filter === 'price'){
-            if(this.calculateFinalPrice(a.voos) < this.calculateFinalPrice(b.voos)){
-                return 1;
+            if(Number(this.calculateFinalPrice(a.voos).replace(',', '.')) < Number(this.calculateFinalPrice(b.voos).replace(',', '.'))){
+                return -1;
             }
 
-            if(this.calculateFinalPrice(a.voos) > this.calculateFinalPrice(b.voos)){
-                return -1;
+            if(Number(this.calculateFinalPrice(a.voos).replace(',', '.')) > Number(this.calculateFinalPrice(b.voos).replace(',', '.'))){
+                return 1;
             }
             return 0;
         }

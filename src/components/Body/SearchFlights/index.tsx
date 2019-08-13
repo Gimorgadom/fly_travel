@@ -24,7 +24,7 @@ export default class SearchFlights extends PureComponent<IProps, IState>{
     constructor(props: any){
         super(props);
 
-        this.state = {listAirports: [], date: '2019-02-16', from: 'BSB', to: 'PLU'};
+        this.state = {listAirports: [], date: '2019-02-10', from: '', to: ''};
 
     }
 
@@ -49,7 +49,7 @@ export default class SearchFlights extends PureComponent<IProps, IState>{
     
     selectDate = (event: any) => {
         this.setState({date: event.target.value});
-        console.log(event.target.value);
+        
     }
 
     searchFlight = async () => {
@@ -120,7 +120,7 @@ export default class SearchFlights extends PureComponent<IProps, IState>{
 
                     <input className={'date'}
                         type="date"
-                        defaultValue= '2019-02-16'
+                        defaultValue= '2019-02-10'
                         min={'2019-02-10'}
                         max={'2019-02-18'}
                         onChange={this.selectDate}
