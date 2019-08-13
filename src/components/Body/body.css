@@ -1,0 +1,17 @@
+.body{
+   display: flex;
+   padding: 30px;
+   justify-content: space-between;
+   height: -webkit-fill-available;;
+   overflow: auto;
+}
+
+@media screen and (max-width: 960px){
+   .body{
+      flex-direction: column;
+      align-items: center;
+      overflow: auto;
+      justify-content: flex-start;
+   }
+}
+
